@@ -2,9 +2,6 @@
 
 	<form accept-charset="UTF-8" id="mainForm" method="post">
 
-	<div class="menu" id="menu1">
-	</div>
-
 	<div class="corpo">
 
 		<div class="linha">
