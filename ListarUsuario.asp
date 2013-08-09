@@ -8,16 +8,16 @@
 
 			<div class="colunas doze">
 
-				<h1 class="lead" data-bind="text: tituloLista">Usuários</h1>
+				<h1 class="lead" data-bind="text: tituloLista"></h1>
 
 				<table class="striped rounded">
 				<caption>total <span data-bind="text: usuarios.length"></span></caption>
 				<thead>
 					<tr>
-						<th data-bind="text: cabecalhoNome">Coluna</th>
-						<th data-bind="text: cabecalhoEmail">Coluna</th>
-						<th data-bind="text: cabecalhoDescricaoTipo">Coluna</th>
-						<th data-bind="text: cabecalhoDescricaoSituacao">Coluna</th>
+						<th data-bind="text: cabecalhoNome"></th>
+						<th data-bind="text: cabecalhoEmail"></th>
+						<th data-bind="text: cabecalhoDescricaoTipo"></th>
+						<th data-bind="text: cabecalhoDescricaoSituacao"></th>
 						<th>&nbsp;</th>
 					</tr>
 				</thead>
