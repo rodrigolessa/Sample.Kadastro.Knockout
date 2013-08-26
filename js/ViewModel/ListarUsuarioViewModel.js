@@ -33,11 +33,9 @@ function ListarUsuarioViewModel()
     }
 
     // Load initial state from server, convert it to Task instances, then populate self.tasks
-    $.getJSON("Usuario/ObterListaUsuarios.asp", function(allData) {
+    $.getJSON("Kadastro.Persistencia/UsuarioRepository.asp", function(allData) {
         var mappedTasks = $.map(allData, function(item) { return new Usuario(item) });
         self.usuarios(mappedTasks);
-        //alert(data);
-        //self.usuarios = data;
     });
 }
 
