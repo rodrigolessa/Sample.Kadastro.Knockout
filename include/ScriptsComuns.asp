@@ -5,3 +5,4 @@
 	<script src="js/libs/jquery-ui-1.8.24.min.js"></script>
 	<script src="js/libs/json2.js"></script>
 	<script src="js/libs/knockout-2.2.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
