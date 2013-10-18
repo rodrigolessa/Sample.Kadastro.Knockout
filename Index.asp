@@ -1,91 +1,145 @@
 	<!--#include file="include/Cabecalho.asp"-->
 
-	<form accept-charset="UTF-8" id="mainForm" method="post">
+	<div id="container-topo" class="container-fluid container-topo">
 
-	<div class="modal" id="modal1">
-		<div class="conteudo">
-			<a class="interruptor fechar" trigger="|#modal1"><i class="icone-cancel" /></i></a>
-			<div class="linha">
-				<div class="colunas">
-					<h2 data-bind="text: tituloModal">título</h2>
-					<p data-bind="text: textoModal">texto</p>
-					<p class="botao primario medio"><a href="#" class="interruptor" trigger="|#modal1">Fechar Janela</a></p>
-				</div>
+		<div class="row-fluid">
+
+			<div class="span12">
+
+				<h4 class="lead" data-bind="text: lead">Controle</h4>
+
+				<form accept-charset="UTF-8" id="mainForm" method="post" class="form-horizontal container-narrow">
+
+					<fieldset>
+
+						<legend><h1 data-bind="text: dia">H</h1></legend>
+
+						<ul>
+							<li class="field">
+								<label class="inline" for="text1">Entrada:</label>
+								<input class="wide text input" name="text1" type="text" placeholder="wide input" data-bind="value: txtEntrada"/>
+							</li>
+							<li class="field">
+								<label class="inline" for="text2">Saída:</label>
+								<input class="wide text input" name="text1" type="text" placeholder="wide input" data-bind="value: txtSaída"/>
+							</li>
+							<li class="field">
+								<button data-bind="click: addPonto, enable: pontosDia().length < 2, text: txtBotaoSalvar">Cad</button>
+							</li>
+						</ul>
+
+					</fieldset>
+
+				</form>
+
 			</div>
+			<!--/span-->
+
 		</div>
-	</div>
+		<!--/row-->
 
-	<div class="corpo">
+		<div class="row-fluid">
 
-		<div class="linha">
-			<div class="colunas doze">
-				<h1 class="lead">Titulo</h1>
-				<p>This is my awesome paragraph text, it is the base style/size for paragraph text. We love 16px for body copy as it provides for a more consistent cross browser experience. It is also digitally equivalent to to 12pt standard set in print design. We also love the golden ratio, all of the type set here is based off of that deliciously elegant ratio. Enjoy!</p>
+			<div class="span12">
+
+				<table class="rounded">
+				<caption data-bind="text: txtCaptionMes"></caption>
+				<thead>
+					<tr>
+						<th data-bind="text: cabecalhoData"></th>
+						<th data-bind="text: cabecalhoEntrada"></th>
+						<th data-bind="text: cabecalhoSaida"></th>
+						<th data-bind="text: cabecalhoEntrada"></th>
+						<th data-bind="text: cabecalhoSaida"></th>
+						<th data-bind="text: cabecalhoTotalDia"></th>
+						<th data-bind="text: cabecalhoHorasNegativasDia"></th>
+						<th data-bind="text: cabecalhoHorasPositivasDia"></th>
+					</tr>
+				</thead>
+				<tbody data-bind="foreach: pontosMes">
+					<tr>
+						<td data-bind="text: dataFormatada"/></td>
+						<td><input data-bind="value: entrada"/></td>
+						<td><input data-bind="value: saida"/></td>
+						<!--<td><select data-bind="options: $root.pratos, value: prato, optionsText: 'nome'"></select></td>-->
+						<td data-bind="text: totalHorasDia"></td>
+						<td data-bind="text: horasNegativasDia"></td>
+						<td data-bind="text: horasPositivasDia"></td>
+					</tr>
+				</tbody>
+				</table>
+				<h3 data-bind="visible: totalMes().length > 0">
+					Total de horas do mês: <span data-bind="text: totalMes()"></span>
+				</h3>
+
 			</div>
-		</div>
+			<!--/span-->
 
-		<div class="linha">
-			<h1 class="lead">Formulários</h1>
-			<div class="linha">
-				<div class="colunas quatro">
-					<h4 class="lead">tabela</h4>
-					<form>
-						<fieldset>
-							<legend>Fieldset with legend</legend>
-							<ul>
-								<li class="field">
-									<label class="inline" for="text1">Nome:</label>
-									<input class="wide text input" name="text1" type="text" placeholder="wide input" data-bind="value: txtPassageiro"/>
-								</li>
-								<li class="field">
-									<label class="inline" for="text2">Senha:</label>
-									<input class="wide password input" name="text2" type="password" placeholder="wide input" />
-								</li>
-								<li class="field">
-									<div class="picker">
-										<label class="inline" for="select2">Assentos:</label>
-										<select name="select2" data-bind="options: $root.assentos, optionsText: 'numero', value: 'numero'"></select>
-									</div>
-								</li>
-								<li class="field">
-									<button data-bind="click: addPassageiro, enable: passageiros().length < 5">Reservar assento</button>
-								</li>
-							</ul>
-						</fieldset>
-					</form>
-				</div>
-				<div class="colunas quatro">
-					<h4 class="lead">tabela</h4>
-					<table>
-						<caption>Assentos reservados (<span data-bind="text: passageiros().length"></span>)</caption>
-						<thead>
-							<tr>
-								<th data-bind="text: passageiroNome">1</th>
-								<th data-bind="text: passageiroAssento">2</th>
-								<th data-bind="text: AssentoJanela">3</th>
-							</tr>
-						</thead>
-						<tbody data-bind="foreach: passageiros">
-							<tr>
-								<td data-bind="text: nome">1</td>
-								<td data-bind="text: assento().numero">2</td>
-								<td data-bind="text: janelaFormatada">3</td>
-								<td><a href="#" data-bind="click: $root.removePassageiro">excluir</a></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
 		</div>
-
-		<div class="linha">
-			<div class="colunas doze">
-			</div>
-		</div>
+		<!--/row-->
 
 	</div>
+	<!--/.fluid-container-->
 
-	</form>
+	<!-- NÍVEL / SENIOR //-->
+	<div class="container-nivel">
+
+		<div class="row-fluid">
+
+			<div class="span12">
+
+				<div class="container-narrow text-right">
+
+					<img src="img/my.icon2.png" class="my-icon">
+
+				</div>
+
+			</div>
+			<!--/span-->
+
+		</div>
+		<!--/row-->
+
+		<div class="row-fluid row-divisor-base">
+
+			<div class="span12">
+
+				<div class="container-narrow text-right">
+
+					<h4>Rodrigo Lessa</h4>
+
+				</div>
+
+			</div>
+			<!--/span-->
+
+		</div>
+		<!--/row-->
+
+	</div>
+	<!--/.fluid-container-->
+
+	<div class="container-base">
+
+		<div class="row-fluid">
+
+			<div class="span12">
+
+				<div class="container-narrow">
+
+					...
+
+				</div>
+
+			</div>
+			<!--/span-->
+
+		</div>
+		<!--/row-->
+
+	</div>
+	<!--/.fluid-container-->
+
 
 	<!--#include file="include/ScriptsComuns.asp"-->
 
