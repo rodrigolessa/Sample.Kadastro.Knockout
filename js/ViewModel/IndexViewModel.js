@@ -2,6 +2,7 @@
 function IndexViewModel() 
 {
 	var self = this;
+    
     self.tituloModal = ko.observable("Janela Model");
 }
 

@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>jQuery BlockUI Plugin</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script src="http://malsup.github.io/jquery.blockUI.js"></script>
+<script type="text/javascript">
+	
+	function valida(){
+		$.blockUI({ message: '<h1>Just a moment...</h1>' });
+		setTimeout($.unblockUI, 2000);
+	}
+
+</script>
+</head>
+<body>
+	<input type="button" value="Exibir" onClick="JavaScript: valida();">
+</body>
+</html>
