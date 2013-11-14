@@ -101,7 +101,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="brand" href="#">controle horas</a>
+				<a class="brand" href="#">controle de horas</a>
 				<div class="nav-collapse collapse">
 					<ul class="nav">
 						<li class="active"><a href="#container-topo">início</a></li>

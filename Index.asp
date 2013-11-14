@@ -1,4 +1,4 @@
-	<!--#include file="include/Cabecalho.asp"-->
+	<!--#include file="Shared/Cabecalho.asp"-->
 
 	<div id="container-topo" class="container-fluid container-topo">
 
@@ -6,27 +6,25 @@
 
 			<div class="span12">
 
-				<h4 class="lead" data-bind="text: lead">Controle</h4>
+				<!--<h4 class="lead" data-bind="text: lead">Controle</h4>-->
 
-				<form accept-charset="UTF-8" id="mainForm" method="post" class="form-horizontal container-narrow">
+				<form role="form" accept-charset="UTF-8" id="mainForm" method="post" class="container-narrow">
 
 					<fieldset>
 
-						<legend><h1 data-bind="text: dia">H</h1></legend>
+						<legend><h1 data-bind="text: lblDia">dia</h1></legend>
 
-						<ul>
-							<li class="field">
-								<label class="inline" for="text1">Entrada:</label>
-								<input class="wide text input" name="text1" type="text" placeholder="wide input" data-bind="value: txtEntrada"/>
-							</li>
-							<li class="field">
-								<label class="inline" for="text2">Saída:</label>
-								<input class="wide text input" name="text1" type="text" placeholder="wide input" data-bind="value: txtSaída"/>
-							</li>
-							<li class="field">
-								<button data-bind="click: addPonto, enable: pontosDia().length < 2, text: txtBotaoSalvar">Cad</button>
-							</li>
-						</ul>
+						<div class="form-group">
+							<label class="inline" for="input1">Entrada:</label>
+							<input class="form-control" name="input1" type="text" placeholder="Hora de Entrada" data-bind="value: txtEntrada"/>
+						</div>
+
+						<div class="form-group">
+							<label class="inline" for="input2">Saída:</label>
+							<input class="form-control" name="input2" type="text" placeholder="Hora de Saída" data-bind="value: txtSaída"/>
+						</div>
+
+						<button data-bind="click: addPonto, enable: pontosDia().length < 2, text: txtBotaoSalvar" class="btn btn-warning"></button>
 
 					</fieldset>
 
@@ -42,6 +40,7 @@
 
 			<div class="span12">
 
+			<!--
 				<table class="rounded">
 				<caption data-bind="text: txtCaptionMes"></caption>
 				<thead>
@@ -61,7 +60,7 @@
 						<td data-bind="text: dataFormatada"/></td>
 						<td><input data-bind="value: entrada"/></td>
 						<td><input data-bind="value: saida"/></td>
-						<!--<td><select data-bind="options: $root.pratos, value: prato, optionsText: 'nome'"></select></td>-->
+						<td><select data-bind="options: $root.pratos, value: prato, optionsText: 'nome'"></select></td>
 						<td data-bind="text: totalHorasDia"></td>
 						<td data-bind="text: horasNegativasDia"></td>
 						<td data-bind="text: horasPositivasDia"></td>
@@ -71,6 +70,7 @@
 				<h3 data-bind="visible: totalMes().length > 0">
 					Total de horas do mês: <span data-bind="text: totalMes()"></span>
 				</h3>
+			-->
 
 			</div>
 			<!--/span-->
@@ -141,8 +141,8 @@
 	<!--/.fluid-container-->
 
 
-	<!--#include file="include/ScriptsComuns.asp"-->
+	<!--#include file="Shared/ScriptsComuns.asp"-->
 
 	<script src="js/ViewModel/IndexViewModel.js"></script>
 
-	<!--#include file="include/Rodape.asp"-->
+	<!--#include file="Shared/Rodape.asp"-->
