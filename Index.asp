@@ -1,144 +1,118 @@
 	<!--#include file="Shared/Cabecalho.asp"-->
 
-	<div id="container-topo" class="container-fluid container-topo">
+	<div id="topo" class="row container-topo">
 
-		<div class="row-fluid">
+		<div class="col-lg-12">
 
-			<div class="span12">
+			<form role="form" accept-charset="UTF-8" id="mainForm" method="post" class="container-narrow">
 
-				<!--<h4 class="lead" data-bind="text: lead">Controle</h4>-->
+				<fieldset>
 
-				<form role="form" accept-charset="UTF-8" id="mainForm" method="post" class="container-narrow">
+					<h2 data-bind="text: lblDia">dia</h2>
 
-					<fieldset>
+					<hr>
 
-						<legend><h1 data-bind="text: lblDia">dia</h1></legend>
+					<div class="form-group">
+						<label for="input1">Hora Intervalo Entrada:</label>
+						<input id="input1" type="text" class="form-control input-lg" placeholder="Hora de Entrada" data-bind="value: txtEntrada"/>
+					</div>
 
-						<div class="form-group">
-							<label class="inline" for="input1">Entrada:</label>
-							<input class="form-control" name="input1" type="text" placeholder="Hora de Entrada" data-bind="value: txtEntrada"/>
-						</div>
+					<div class="form-group">
+						<label for="input2">Hora Intervalo Saída:</label>
+						<input id="input2" type="text" class="form-control input-lg" placeholder="Hora de Saída" data-bind="value: txtSaída"/>
+					</div>
 
-						<div class="form-group">
-							<label class="inline" for="input2">Saída:</label>
-							<input class="form-control" name="input2" type="text" placeholder="Hora de Saída" data-bind="value: txtSaída"/>
-						</div>
+					<button data-bind="click: addPonto, enable: pontosMes().length < 2, text: txtBotaoSalvar" class="btn btn-primary btn-lg btn-block"></button>
 
-						<button data-bind="click: addPonto, enable: pontosDia().length < 2, text: txtBotaoSalvar" class="btn btn-warning"></button>
+				</fieldset>
 
-					</fieldset>
+				<hr>
 
-				</form>
+				<div class="table-responsive">
+					<table class="table table-striped">
+					<caption data-bind="text: txtCaptionMes"></caption>
+					<thead>
+						<tr>
+							<th data-bind="text: cabecalhoData"></th>
+							<th data-bind="text: cabecalhoEntrada"></th>
+							<th data-bind="text: cabecalhoSaida"></th>
+							<th data-bind="text: cabecalhoEntrada"></th>
+							<th data-bind="text: cabecalhoSaida"></th>
+							<th data-bind="text: cabecalhoTotalDia"></th>
+							<th data-bind="text: cabecalhoHorasNegativasDia"></th>
+							<th data-bind="text: cabecalhoHorasPositivasDia"></th>
+						</tr>
+					</thead>
+					<tbody data-bind="foreach: pontosMes">
+						<tr>
+							<td data-bind="text: dataFormatada"/></td>
+							<td data-bind="text: entrada"></td>
+							<td data-bind="text: saida"></td>
+							<td></td>
+							<td></td>
+							<td data-bind="text: totalHorasDia"></td>
+							<td data-bind="text: horasNegativasDia"></td>
+							<td data-bind="text: horasPositivasDia"></td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
 
-			</div>
-			<!--/span-->
+				<h4 data-bind="visible: totalMes > 0">
+					Total de horas do mês: <span data-bind="text: totalMes"></span>
+				</h4>
 
-		</div>
-		<!--/row-->
-
-		<div class="row-fluid">
-
-			<div class="span12">
-
-			<!--
-				<table class="rounded">
-				<caption data-bind="text: txtCaptionMes"></caption>
-				<thead>
-					<tr>
-						<th data-bind="text: cabecalhoData"></th>
-						<th data-bind="text: cabecalhoEntrada"></th>
-						<th data-bind="text: cabecalhoSaida"></th>
-						<th data-bind="text: cabecalhoEntrada"></th>
-						<th data-bind="text: cabecalhoSaida"></th>
-						<th data-bind="text: cabecalhoTotalDia"></th>
-						<th data-bind="text: cabecalhoHorasNegativasDia"></th>
-						<th data-bind="text: cabecalhoHorasPositivasDia"></th>
-					</tr>
-				</thead>
-				<tbody data-bind="foreach: pontosMes">
-					<tr>
-						<td data-bind="text: dataFormatada"/></td>
-						<td><input data-bind="value: entrada"/></td>
-						<td><input data-bind="value: saida"/></td>
-						<td><select data-bind="options: $root.pratos, value: prato, optionsText: 'nome'"></select></td>
-						<td data-bind="text: totalHorasDia"></td>
-						<td data-bind="text: horasNegativasDia"></td>
-						<td data-bind="text: horasPositivasDia"></td>
-					</tr>
-				</tbody>
-				</table>
-				<h3 data-bind="visible: totalMes().length > 0">
-					Total de horas do mês: <span data-bind="text: totalMes()"></span>
-				</h3>
-			-->
-
-			</div>
-			<!--/span-->
+			</form>
 
 		</div>
-		<!--/row-->
+		<!--/span-->
 
 	</div>
-	<!--/.fluid-container-->
+	<!--/row-->
+
 
 	<!-- NÍVEL / SENIOR //-->
-	<div class="container-nivel">
+	<div class="row container-nivel">
 
-		<div class="row-fluid">
+		<div class="col-lg-12">
 
-			<div class="span12">
-
-				<div class="container-narrow text-right">
-
-					<img src="img/my.icon2.png" class="my-icon">
-
-				</div>
-
+			<div class="container-narrow text-right">
+				<img src="img/my.icon2.png" class="my-icon">
 			</div>
-			<!--/span-->
 
 		</div>
-		<!--/row-->
-
-		<div class="row-fluid row-divisor-base">
-
-			<div class="span12">
-
-				<div class="container-narrow text-right">
-
-					<h4>Rodrigo Lessa</h4>
-
-				</div>
-
-			</div>
-			<!--/span-->
-
-		</div>
-		<!--/row-->
+		<!--/span-->
 
 	</div>
-	<!--/.fluid-container-->
+	<!--/row-->
 
-	<div class="container-base">
+	<div class="row container-divisor-base">
 
-		<div class="row-fluid">
+		<div class="col-lg-12">
 
-			<div class="span12">
-
-				<div class="container-narrow">
-
-					...
-
-				</div>
-
+			<div class="container-narrow text-right">
+				<h4>Rodrigo Lessa</h4>
 			</div>
-			<!--/span-->
 
 		</div>
-		<!--/row-->
+		<!--/span-->
 
 	</div>
-	<!--/.fluid-container-->
+	<!--/row-->
+
+	<div class="row container-base">
+
+		<div class="col-lg-12">
+
+			<div class="container-narrow">
+				...
+			</div>
+
+		</div>
+		<!--/span-->
+
+	</div>
+	<!--/row-->
 
 
 	<!--#include file="Shared/ScriptsComuns.asp"-->
