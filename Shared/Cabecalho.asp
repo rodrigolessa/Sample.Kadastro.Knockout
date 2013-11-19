@@ -40,6 +40,10 @@
       text-align: center;
     }
 
+    .labelDiscreto{
+      color: #ddd;
+    }
+
     .container-topo
     {
       padding-top: 80px;

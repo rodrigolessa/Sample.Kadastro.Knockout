@@ -1,9 +1,22 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 // This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
+
 function CadastrarPonto(prmDia, prmEntrada, prmSaida) {
 
 	var selff = this;
-	selff.dia = prmDia;
+    var horEntrada = 0;
+    var minEntrada = 0;
+
+    selff.dia = prmDia;
+
+    if(prmEntrada.indexOf(":")<1){
+        horEntrada = prmEntrada;
+        minEntrada = 0;
+    }
+
+    // Criar sub listas para intervalos de horas do dia
+    self.intervalosDia.push(new CadastrarIntervalo(prmEntrada, prmSaida));
+	
 	selff.entrada = prmEntrada;
 	selff.saida = prmSaida;
 
@@ -12,9 +25,19 @@ function CadastrarPonto(prmDia, prmEntrada, prmSaida) {
     });
 
     // Calcular horas do dia, negativas e positivas
+    //var now = new Date();
+    //if (format == "h:m") {
+        //now.setHours(dStr.substr(0,dStr.indexOf(":")));
+        //now.setMinutes(dStr.substr(dStr.indexOf(":")+1));
+        //now.setSeconds(0);
+
     selff.totalHorasDia = 8;
     selff.horasNegativasDia = 0;
     selff.horasPositivasDia = 1;
+}
+
+function CadastrarIntervalo(prmEntrada, prmSaida) {
+    var selff = this;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -78,7 +101,26 @@ function IndexViewModel() {
     ////////////////////////////////////////////////////////////////////////////////////////
 
 	self.addPonto = function() {
-		var inputEntrada = self.txtEntrada;
+
+        // Ativando bloqueio de tela
+        /////////////////////////////////////////
+        $.blockUI({
+            message: '<h1>Processando...</h1>',
+            css: {
+                border: 'none',
+                padding: '15px',
+                backgroundColor: '#000',
+                '-webkit-border-radius': '10px',
+                '-moz-border-radius': '10px',
+                opacity: .5,
+                color: '#fff'
+            } 
+        });
+
+        // Desativando bloqueio por tempo
+        setTimeout($.unblockUI, 2000);
+        
+        var inputEntrada = self.txtEntrada;
 		var inputSaida = self.txtSaída;
 		self.pontosMes.push(new CadastrarPonto(self.dia, inputEntrada, inputSaida));
 	}

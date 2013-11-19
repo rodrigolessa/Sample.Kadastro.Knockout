@@ -13,13 +13,13 @@
 					<hr>
 
 					<div class="form-group">
-						<label for="input1">Hora Intervalo Entrada:</label>
-						<input id="input1" type="text" class="form-control input-lg" placeholder="Hora de Entrada" data-bind="value: txtEntrada"/>
+						<label for="input1" class="labelDiscreto">Hora Intervalo Entrada:</label>
+						<input  id="input1" type="text" class="form-control input-lg horaMinuto" placeholder="00:00" data-bind="value: txtEntrada" maxlength="5"/>
 					</div>
 
 					<div class="form-group">
-						<label for="input2">Hora Intervalo Saída:</label>
-						<input id="input2" type="text" class="form-control input-lg" placeholder="Hora de Saída" data-bind="value: txtSaída"/>
+						<label for="input2" class="labelDiscreto">Hora Intervalo Saída:</label>
+						<input  id="input2" type="text" class="form-control input-lg horaMinuto" placeholder="00:00" data-bind="value: txtSaída" maxlength="5"/>
 					</div>
 
 					<button data-bind="click: addPonto, enable: pontosMes().length < 2, text: txtBotaoSalvar" class="btn btn-primary btn-lg btn-block"></button>
@@ -118,5 +118,13 @@
 	<!--#include file="Shared/ScriptsComuns.asp"-->
 
 	<script src="js/ViewModel/IndexViewModel.js"></script>
+
+	<script type="text/javascript">
+		//$(document).ready(function(){
+			//alert($('#input2').val());
+		    //$('#input1').mask('00:00');
+		    //$('#input2').mask('23:59');
+		//});
+	</script>
 
 	<!--#include file="Shared/Rodape.asp"-->
