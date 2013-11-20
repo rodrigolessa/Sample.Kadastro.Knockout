@@ -9,6 +9,8 @@ function CadastrarPonto(prmDia, prmEntrada, prmSaida) {
 
     selff.dia = prmDia;
 
+    alert(prmDia.getTime());
+
     //if(prmEntrada.indexOf(":")<1){
     //    horEntrada = prmEntrada;
     //    minEntrada = 0;
@@ -51,15 +53,17 @@ function IndexViewModel() {
 
 	var self = this;
     
-    //self.lblLead = ko.observable('Controle Manual:');
     self.lblDia = ko.observable('Hoje');
 
-    //var now = new Date();
-    //var h = now.getHours();
-    //var m = now.getMinutes();
-    self.dia = new Date();
-    var h = self.dia.getHours();
-    var m = self.dia.getMinutes();
+    // Obtendo hora e minutos do dia atual
+    var hoje = new Date();
+    var h = hoje.getHours();
+    var m = hoje.getMinutes();
+
+    // Zera hora, mantem o dia para futura comparação
+    hoje.setHours(0);
+    hoje.setMinutes(0);
+    hoje.setSeconds(0);
 
     if(m>10)
     	m-=10;
@@ -137,7 +141,9 @@ function IndexViewModel() {
         
         var inputEntrada = self.txtEntrada;
 		var inputSaida = self.txtSaída;
-		self.pontosMes.push(new CadastrarPonto(self.dia, inputEntrada, inputSaida));
+
+		//self.pontosMes.push(new CadastrarPonto(hoje, inputEntrada, inputSaida));
+        CadastrarPonto(hoje, inputEntrada, inputSaida);
 	}
 
 	self.removePonto = function(ponto) {
