@@ -9,13 +9,15 @@ function CadastrarPonto(prmDia, prmEntrada, prmSaida) {
 
     selff.dia = prmDia;
 
-    if(prmEntrada.indexOf(":")<1){
-        horEntrada = prmEntrada;
-        minEntrada = 0;
-    }
+    //if(prmEntrada.indexOf(":")<1){
+    //    horEntrada = prmEntrada;
+    //    minEntrada = 0;
+    //}
+
+    selff.intervalosDia = ko.observableArray();
 
     // Criar sub listas para intervalos de horas do dia
-    self.intervalosDia.push(new CadastrarIntervalo(prmEntrada, prmSaida));
+    selff.intervalosDia.push(new CadastrarIntervalo(prmEntrada, prmSaida));
 	
 	selff.entrada = prmEntrada;
 	selff.saida = prmSaida;
@@ -37,7 +39,10 @@ function CadastrarPonto(prmDia, prmEntrada, prmSaida) {
 }
 
 function CadastrarIntervalo(prmEntrada, prmSaida) {
-    var selff = this;
+    var selfi = this;
+
+    selfi.entrada = prmEntrada;
+    selfi.saida = prmSaida;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -80,6 +85,7 @@ function IndexViewModel() {
     self.cabecalhoData = 'Dia';
     self.cabecalhoEntrada = 'Entrada';
     self.cabecalhoSaida = 'Saída';
+    self.cabecalhoIntervalos = 'Intervalos';
     self.cabecalhoTotalDia = 'Horas do dia';
     self.cabecalhoHorasNegativasDia = 'Negativas';
     self.cabecalhoHorasPositivasDia = 'Positivas';
@@ -93,6 +99,15 @@ function IndexViewModel() {
             if(isNaN(valorItem))
                 total += valorItem;
         })
+        return total;
+    });
+    */
+
+    /*
+    self.totalConta = ko.computed(function() {
+        var total = 0;
+        for (var i = 0; i < self.pedidos().length; i++)
+            total += self.pedidos()[i].prato().valor;
         return total;
     });
     */
@@ -130,6 +145,14 @@ function IndexViewModel() {
 	}
 
     // TODO: Função de busca dentro dos pontos por Mes para localizar os pontos por dia
+
+    /*
+    self.frutas = [
+        { nome: "Maçã", preco: 1.30, exibir: true, relacionadas: [] },
+        { nome: "Frutas Vermelhas", preco: 3.50, exibir: true, relacionadas: [ { nome: "Morango" }, { nome: "Cereja" }, { nome: "Amora" } ] },
+        { nome: "Graviola", preco: 3.90, exibir: true, relacionadas: [] }
+    ];
+    */
 
 }
 

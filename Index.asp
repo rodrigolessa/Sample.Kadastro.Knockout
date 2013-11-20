@@ -34,10 +34,7 @@
 					<thead>
 						<tr>
 							<th data-bind="text: cabecalhoData"></th>
-							<th data-bind="text: cabecalhoEntrada"></th>
-							<th data-bind="text: cabecalhoSaida"></th>
-							<th data-bind="text: cabecalhoEntrada"></th>
-							<th data-bind="text: cabecalhoSaida"></th>
+							<th data-bind="text: cabecalhoIntervalos"></th>
 							<th data-bind="text: cabecalhoTotalDia"></th>
 							<th data-bind="text: cabecalhoHorasNegativasDia"></th>
 							<th data-bind="text: cabecalhoHorasPositivasDia"></th>
@@ -46,10 +43,9 @@
 					<tbody data-bind="foreach: pontosMes">
 						<tr>
 							<td data-bind="text: dataFormatada"/></td>
-							<td data-bind="text: entrada"></td>
-							<td data-bind="text: saida"></td>
-							<td></td>
-							<td></td>
+							<td data-bind="foreach: intervalosDia">
+								<span data-bind="text: entrada"></span> - <span data-bind="text: saida"></span>
+							</td>
 							<td data-bind="text: totalHorasDia"></td>
 							<td data-bind="text: horasNegativasDia"></td>
 							<td data-bind="text: horasPositivasDia"></td>
