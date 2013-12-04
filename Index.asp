@@ -73,7 +73,7 @@
 		<div class="col-lg-12">
 
 			<div class="container-narrow text-right">
-				<img src="img/my.icon2.png" class="my-icon">
+				<img src="img/my.icon2.png" width="82" height="82" class="my-icon">
 			</div>
 
 		</div>
@@ -114,13 +114,5 @@
 	<!--#include file="Shared/ScriptsComuns.asp"-->
 
 	<script src="js/ViewModel/IndexViewModel.js"></script>
-
-	<script type="text/javascript">
-		//$(document).ready(function(){
-			//alert($('#input2').val());
-		    //$('#input1').mask('00:00');
-		    //$('#input2').mask('23:59');
-		//});
-	</script>
 
 	<!--#include file="Shared/Rodape.asp"-->

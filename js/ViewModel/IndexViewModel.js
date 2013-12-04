@@ -9,7 +9,7 @@ function CadastrarPonto(prmDia, prmEntrada, prmSaida) {
 
     selff.dia = prmDia;
 
-    alert(prmDia.getTime());
+    //alert(prmDia.getTime());
 
     //if(prmEntrada.indexOf(":")<1){
     //    horEntrada = prmEntrada;
@@ -124,7 +124,7 @@ function IndexViewModel() {
         // Ativando bloqueio de tela
         /////////////////////////////////////////
         $.blockUI({
-            message: '<h1>Processando...</h1>',
+            message: 'Processando...<br /><img src="img/ajax-loader.gif" border="0">', // Refatorar para remover HTML
             css: {
                 border: 'none',
                 padding: '15px',
@@ -142,8 +142,8 @@ function IndexViewModel() {
         var inputEntrada = self.txtEntrada;
 		var inputSaida = self.txtSaída;
 
-		//self.pontosMes.push(new CadastrarPonto(hoje, inputEntrada, inputSaida));
-        CadastrarPonto(hoje, inputEntrada, inputSaida);
+		self.pontosMes.push(new CadastrarPonto(hoje, inputEntrada, inputSaida));
+        //CadastrarPonto(hoje, inputEntrada, inputSaida);
 	}
 
 	self.removePonto = function(ponto) {
