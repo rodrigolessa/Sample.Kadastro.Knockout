@@ -2,31 +2,27 @@ USE [kadastro]
 GO
 
 CREATE TABLE [dbo].[ponto](
-	[id] [int] NOT NULL,
+	[id] [int] IDENTITY(1,1) NOT NULL,
 	[dia] [smalldatetime] NOT NULL,
-	[horas] [time](7) NULL,
- CONSTRAINT [PK_ponto] PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
+	[horas] [time](7) NULL
+)
 GO
 
 CREATE TABLE [dbo].[intervalo](
-	[id] [bigint] NOT NULL,
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
 	[idPonto] [int] NOT NULL,
 	[entrada] [time](7) NULL,
-	[saida] [time](7) NULL,
- CONSTRAINT [PK_intervalo] PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
+	[saida] [time](7) NULL
+)
 GO
 
-ALTER TABLE [dbo].[intervalo]  WITH NOCHECK ADD  CONSTRAINT [FK_intervalo_ponto] FOREIGN KEY([idPonto])
-REFERENCES [dbo].[ponto] ([id])
+ALTER TABLE [dbo].[ponto] ADD CONSTRAINT [PK_ponto] PRIMARY KEY CLUSTERED ([id] ASC)
+GO
+
+ALTER TABLE [dbo].[intervalo] ADD CONSTRAINT [PK_intervalo] PRIMARY KEY CLUSTERED ([id] ASC)
+GO
+
+ALTER TABLE [dbo].[intervalo]  WITH NOCHECK ADD  CONSTRAINT [FK_intervalo_ponto] FOREIGN KEY([idPonto]) REFERENCES [dbo].[ponto] ([id])
 GO
 
 ALTER TABLE [dbo].[intervalo] CHECK CONSTRAINT [FK_intervalo_ponto]
