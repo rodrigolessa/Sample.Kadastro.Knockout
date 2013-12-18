@@ -13,7 +13,12 @@ namespace LDSoft.APOL.TimesheetServiceHost
     public interface ITimesheetServiceHost
     {
         [OperationContract]
+        [WebInvoke(Method = "POST",
+           ResponseFormat = WebMessageFormat.Json,
+           RequestFormat = WebMessageFormat.Json,
+           BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         TimesheetDataContract Obter(int id);
+        //FooMessageType Foo(SomeDTO data);
 
         [OperationContract]
         IList<TimesheetDataContract> Listar(TimesheetDataContract item);

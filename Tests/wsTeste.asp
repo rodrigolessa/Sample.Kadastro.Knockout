@@ -1,6 +1,6 @@
 		<script type="text/javascript">
 
-			
+			//WebInvoke
 			$.getJSON('/localhost/timesheet/TimesheetServiceHost.svc/ObterJSON/1', LoadUserName);
 
 			function LoadUserName(Result) {
