@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="LDSoft.APOL.TimesheetServiceHost.TimesheetServiceHost" CodeBehind="TimesheetServiceHost.svc.cs" %>
