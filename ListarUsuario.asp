@@ -1,12 +1,11 @@
-	<!--#include file="include/Cabecalho.asp"-->
+	<!--#include file="Shared/Cabecalho.asp"-->
 
-	<form accept-charset="UTF-8" id="mainForm" method="post">
+	<div id="topo" class="row container-topo">
 
-	<div class="corpo">
+		<div class="col-lg-12">
 
-		<div class="linha">
+			<form role="form" accept-charset="UTF-8" id="mainForm" method="post" class="container-narrow">
 
-			<div class="colunas doze">
 
 				<h1 class="lead" data-bind="text: tituloLista"></h1>
 
@@ -32,16 +31,61 @@
 				</tbody>
 				</table>
 
+			</form>
+
+		</div>
+		<!--/span-->
+
+	</div>
+	<!--/row-->
+
+
+	<!-- NÍVEL / SENIOR //-->
+	<div class="row container-nivel">
+
+		<div class="col-lg-12">
+
+			<div class="container-narrow text-right">
+				<img src="img/my.icon2.png" width="82" height="82" class="my-icon">
 			</div>
 
 		</div>
+		<!--/span-->
 
 	</div>
+	<!--/row-->
 
-	</form>
+	<div class="row container-divisor-base">
 
-	<!--#include file="include/ScriptsComuns.asp"-->
+		<div class="col-lg-12">
+
+			<div class="container-narrow text-right">
+				<h4>Rodrigo Lessa</h4>
+			</div>
+
+		</div>
+		<!--/span-->
+
+	</div>
+	<!--/row-->
+
+	<div class="row container-base">
+
+		<div class="col-lg-12">
+
+			<div class="container-narrow">
+				...
+			</div>
+
+		</div>
+		<!--/span-->
+
+	</div>
+	<!--/row-->
+
+
+	<!--#include file="Shared/ScriptsComuns.asp"-->
 
 	<script src="js/ViewModel/ListarUsuarioViewModel.js"></script>
 
-	<!--#include file="include/Rodape.asp"-->
+	<!--#include file="Shared/Rodape.asp"-->

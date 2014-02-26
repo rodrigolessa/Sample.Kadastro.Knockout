@@ -112,7 +112,13 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">início</a></li>
-            <li><a href="#">usuários</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">usuários <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="ListarUsuario.asp">Listar</a></li>
+                <li><a href="ManterUsuario.asp">Incluir</a></li>
+              </ul>
+            </li>
             <li><a href="#">feriados</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">calendários <b class="caret"></b></a>
