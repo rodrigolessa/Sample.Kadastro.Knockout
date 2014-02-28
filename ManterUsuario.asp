@@ -8,25 +8,27 @@
 
 				<fieldset>
 
-				<legend><h1>Criar uma nova conta!</h1></legend>
+					<h2 data-bind="text: lblTitulo">Nova conta</h2>
+
+					<hr>
 
 					<div class="row">
 
 						<div class="col-lg-6">
 
-							<div class="control-group">
+							<div class="form-group">
 								<label for="login">Login:</label>
-								<input id="login" data-bind="value: Login" type="text" placeholder="Escolha seu login" class="input-block-level">
+								<input id="login" data-bind="value: Login" type="text" placeholder="Escolha seu login" class="form-control">
 							</div>
 
-							<div class="control-group">
+							<div class="form-group">
 								<label for="senha">Senha:</label>
-								<input id="senha" data-bind="value: Senha" type="password" placeholder="Sua senha" class="input-block-level">
+								<input id="senha" data-bind="value: Senha" type="password" placeholder="Sua senha" class="form-control">
 							</div>
 
-							<div class="control-group">
+							<div class="form-group">
 								<label for="confirmaSenha">Confirma Senha:</label>
-								<input id="confirmaSenha" data-bind="value: ConfirmaSenha" type="password" placeholder="Confirme a sua senha" class="input-block-level">
+								<input id="confirmaSenha" data-bind="value: ConfirmaSenha" type="password" placeholder="Confirme a sua senha" class="form-control">
 							</div>
 
 						</div>
@@ -35,25 +37,25 @@
 
 							<div class="form-group">
 								<label for="nome">Nome:</label>
-								<div class="input-prepend">
-									<span class="add-on"><i class="icon-user"></i></span>
-									<input id="nome" data-bind="value: Nome" type="text" placeholder="Seu nome completo">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input id="nome" data-bind="value: Nome" type="text" placeholder="Seu nome completo" class="form-control">
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label for="email">Email:</label>
-								<div class="input-prepend">
-									<span class="add-on"><i class="icon-envelope"></i></span>
-									<input id="email" data-bind="value: Email" type="text" placeholder="Seu email">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+									<input id="email" data-bind="value: Email" type="email" placeholder="Seu email" class="form-control">
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label for="pefilAcesso">Perfil de Acesso:</label>
-								<div class="input-prepend">
-									<span class="add-on"><i class="icon-tag"></i></span>
-									<select id="pefilAcesso" data-bind="options: Perfis, optionsText: 'Descricao', value: PerfilAcesso"></select>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span>
+									<select id="pefilAcesso" data-bind="options: Perfis, optionsText: 'Descricao', value: PerfilAcesso" class="form-control"></select>
 								</div>
 							</div>
 
@@ -61,11 +63,9 @@
 
 					</div>
 
-					<hr>
+					<br />
 
-					<div class="form-group">
-						<button type="submit" data-bind="click: Salvar" class="btn btn-large btn-primary">Salvar conta</button>
-					</div>
+					<button data-bind="click: salvar, enable: usuario.login.length < 3, text: txtBotaoSalvar" class="btn btn-primary btn-lg btn-block">Salvar conta</button>
 
 				</fieldset>
 
