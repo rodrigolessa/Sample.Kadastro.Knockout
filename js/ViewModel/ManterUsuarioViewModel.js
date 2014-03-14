@@ -5,9 +5,9 @@ function ManterUsuarioViewModel()
     self.lblTitulo = ko.observable("TESTE");
     self.Perfis = ko.observableArray([]);
 
-	//var PayinyVM = {};
-
 	//alert(self.Perfis);
+    //alert($('#email').val());
+
     $.getJSON('http://localhost/kadastroNet/KadastroServiceHost.svc/ListarPerfisDeAcesso', function (data) {
     	alert('r');
         var tmp = JSON.stringify(data.d);

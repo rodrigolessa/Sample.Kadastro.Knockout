@@ -47,7 +47,7 @@
 								<label for="email">Email:</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-									<input id="email" data-bind="value: Email" type="email" placeholder="Seu email" class="form-control">
+									<input id="email" data-bind="value: Email" type="email" placeholder="Seu email" class="form-control" value="temail">
 								</div>
 							</div>
 

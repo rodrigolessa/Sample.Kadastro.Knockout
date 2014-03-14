@@ -1,5 +1,5 @@
 ﻿function doAjx(action, data, refresh) {
-	jQuery.ajax({
+	$.ajax({
 		url: action,
 		type: "post",
 		data: ko.toJSON(data),
