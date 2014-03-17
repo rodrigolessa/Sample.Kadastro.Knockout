@@ -8,7 +8,7 @@
 
 				<fieldset>
 
-					<h2 data-bind="text: lblTitulo">Nova conta</h2>
+					<h2 data-bind="text: lblTitulo"></h2>
 
 					<hr>
 
@@ -47,7 +47,7 @@
 								<label for="email">Email:</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-									<input id="email" data-bind="value: Email" type="email" placeholder="Seu email" class="form-control" value="temail">
+									<input id="email" data-bind="value: Email" type="email" placeholder="Seu email" class="form-control">
 								</div>
 							</div>
 
@@ -55,7 +55,7 @@
 								<label for="pefilAcesso">Perfil de Acesso:</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span>
-									<select id="pefilAcesso" data-bind="options: Perfis, optionsText: 'Descricao', value: PerfilAcesso" class="form-control"></select>
+									<select data-bind="options: Perfis, optionsText: 'Descricao'" class="form-control"></select>
 								</div>
 							</div>
 
@@ -65,7 +65,7 @@
 
 					<br />
 
-					<button data-bind="click: salvar, enable: usuario.login.length < 3, text: txtBotaoSalvar" class="btn btn-primary btn-lg btn-block">Salvar conta</button>
+					<button data-bind="click: salvar, enable: Login.length > 3, text: txtBotaoSalvar" class="btn btn-primary btn-lg btn-block"></button>
 
 				</fieldset>
 
