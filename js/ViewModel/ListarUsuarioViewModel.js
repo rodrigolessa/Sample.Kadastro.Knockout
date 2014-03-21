@@ -1,10 +1,10 @@
 function Usuario(data) 
 {
-	//var self = this;
-	this.nome = ko.observable(data.nome);
-	this.email = ko.observable(data.email);
-	this.descricaoTipo = ko.observable(data.descricaoTipo);
-	this.descricaoSituacao = ko.observable(data.descricaoSituacao);
+    this.Id = 
+	this.Login = ko.observable(data.nome);
+	this.Email = ko.observable(data.email);
+	this.Status = ko.observable(data.descricaoTipo);
+	this.DescricaoDoStatus = ko.observable(data.descricaoSituacao);
 }
 
 function ListarUsuarioViewModel()
@@ -13,30 +13,21 @@ function ListarUsuarioViewModel()
 
 	self.tituloLista = "Usuários Cadastrados";
 
-	self.cabecalhoNome = "Nome";
+	self.cabecalhoLogin = "Login";
 	self.cabecalhoEmail = "Email";
-	self.cabecalhoDescricaoTipo = "Tipo";
-	self.cabecalhoDescricaoSituacao = "Situação";
-
-	self.NomeUsuarioText = ko.observable();
+	self.cabecalhoDescricaoDoStatus = "Situação";
 
     self.usuarios = ko.observableArray([]);
 
     // Operations
-    self.addUsuario = function() {
-        self.usuarios.push(new Usuario({ nome: this.NomeUsuarioText() }));
-        self.NomeUsuarioText("");
-    };
-
     self.removeUsuario = function(usuario) {
 		self.usuarios.remove(usuario);
     }
 
-    // Load initial state from server, convert it to Task instances, then populate self.tasks
-    $.getJSON("Kadastro.Persistencia/UsuarioRepository.asp", function(allData) {
-    	alert("OK");
-        //var mappedTasks = $.map(allData, function(item) { return new Usuario(item) });
-        //self.usuarios(mappedTasks);
+    // Load initial state from server, convert it to Task instances, then populate self.usuarios
+    $.getJSON("http://localhost/kadastroNet/KadastroServiceHost.svc/ListarUsuarios/", function(allData) {
+        var mappedUsuarios = $.map(allData, function(item) { return new Usuario(item) });
+        self.usuarios(mappedUsuarios);
     });
 }
 

@@ -13,19 +13,17 @@
 				<caption>total <span data-bind="text: usuarios.length"></span></caption>
 				<thead>
 					<tr>
-						<th data-bind="text: cabecalhoNome"></th>
+						<th data-bind="text: cabecalhoLogin"></th>
 						<th data-bind="text: cabecalhoEmail"></th>
-						<th data-bind="text: cabecalhoDescricaoTipo"></th>
-						<th data-bind="text: cabecalhoDescricaoSituacao"></th>
+						<th data-bind="text: cabecalhoDescricaoDoStatus"></th>
 						<th>&nbsp;</th>
 					</tr>
 				</thead>
 				<tbody data-bind="foreach: usuarios">
 					<tr>
-						<td data-bind="text: nome"></td>
-						<td data-bind="text: email"></td>
-						<td data-bind="text: descricaoTipo"></td>
-						<td data-bind="text: descricaoSituacao"></td>
+						<td data-bind="text: Login" data-bind="value: Id"></td>
+						<td data-bind="text: Email"></td>
+						<td data-bind="text: DescricaoDoStatus"></td>
 						<td><a href="#" data-bind="click: $root.removeUsuario">excluir</a></td>
 					</tr>
 				</tbody>
