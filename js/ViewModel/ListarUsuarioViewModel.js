@@ -1,10 +1,10 @@
 function Usuario(data) 
 {
-    this.Id = 
-	this.Login = ko.observable(data.nome);
-	this.Email = ko.observable(data.email);
-	this.Status = ko.observable(data.descricaoTipo);
-	this.DescricaoDoStatus = ko.observable(data.descricaoSituacao);
+    this.Id = data.Id
+	this.Login = data.Login;
+	this.Email = data.Email;
+	this.Status = data.Status;
+	this.DescricaoDoStatus = data.DescricaoDoStatus;
 }
 
 function ListarUsuarioViewModel()
@@ -26,7 +26,7 @@ function ListarUsuarioViewModel()
 
     // Load initial state from server, convert it to Task instances, then populate self.usuarios
     $.getJSON("http://localhost/kadastroNet/KadastroServiceHost.svc/ListarUsuarios/", function(allData) {
-        var mappedUsuarios = $.map(allData, function(item) { return new Usuario(item) });
+        var mappedUsuarios = $.map(allData.ListarUsuariosResult, function(item) { return new Usuario(item) });
         self.usuarios(mappedUsuarios);
     });
 }

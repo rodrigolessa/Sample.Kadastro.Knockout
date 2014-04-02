@@ -6,13 +6,12 @@
 
 			<form role="form" accept-charset="UTF-8" id="mainForm" method="post" class="container-narrow">
 
+				<h1 class="lead"><span data-bind="text: tituloLista"></span> (<span data-bind="text: usuarios.length"></span>)</h1>
 
-				<h1 class="lead" data-bind="text: tituloLista"></h1>
-
-				<table class="striped rounded">
-				<caption>total <span data-bind="text: usuarios.length"></span></caption>
+				<table class="table table-striped">
 				<thead>
 					<tr>
+						<th>#</th>
 						<th data-bind="text: cabecalhoLogin"></th>
 						<th data-bind="text: cabecalhoEmail"></th>
 						<th data-bind="text: cabecalhoDescricaoDoStatus"></th>
@@ -21,7 +20,8 @@
 				</thead>
 				<tbody data-bind="foreach: usuarios">
 					<tr>
-						<td data-bind="text: Login" data-bind="value: Id"></td>
+						<td data-bind="text: Id"></td>
+						<td data-bind="text: Login"></td>
 						<td data-bind="text: Email"></td>
 						<td data-bind="text: DescricaoDoStatus"></td>
 						<td><a href="#" data-bind="click: $root.removeUsuario">excluir</a></td>
@@ -36,7 +36,6 @@
 
 	</div>
 	<!--/row-->
-
 
 	<!-- NÍVEL / SENIOR //-->
 	<div class="row container-nivel">
@@ -58,7 +57,7 @@
 		<div class="col-lg-12">
 
 			<div class="container-narrow text-right">
-				<h4>Rodrigo Lessa</h4>
+				<h4>...</h4>
 			</div>
 
 		</div>

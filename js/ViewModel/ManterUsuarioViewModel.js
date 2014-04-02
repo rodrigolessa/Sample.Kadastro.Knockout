@@ -56,7 +56,6 @@ function ManterUsuarioViewModel()
             } 
         });
 
-        alert("OK");
 
         // Desativando bloqueio por tempo
         setTimeout($.unblockUI, 2000);
