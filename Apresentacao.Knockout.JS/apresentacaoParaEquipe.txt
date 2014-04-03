@@ -1,0 +1,107 @@
+Knockout.JS
+Um Framework JavaScript baseado no pattern MVVM
+
+Entendendo o Knockout
+
+1. Introdução:
+
+O que é o KnockoutJS
+
+Knockout.js é uma biblioteca client-side em JavaScript.
+Knockout.js fornece ferramentas para tornar mais fácil criar uma interface rica, responsiva e organizada com JavaScript.
+
+
+
+2. Conceitual: (Padrão usado para definir o Knockout)
+
+Adota o Design Pattern Model-View-ViewModel (MVVM)
+
+imagem que representa o Model-View-ViewModel (MVVM) - 2.png
+
+-- podemos até dizer que ele é uma especialização do MVP (Model View Presenter), que também  é independente de plataforma.
+
+--------------------------------------------------------
+
+IMAGEM VIEW
+a View, através do databinding, interage com a ViewModel notificando a ocorrência de eventos e o disparo de comandos. A ViewModel, por sua vez, responde a essa notificação realizando alguma ação no modelo, seja obtendo algum dado, atualizando ou inserindo informações no modelo.
+
+Responsabilidades e características
+
+* View: a responsabilidade da View é definir a aparência ou a estrutura que o usuário vê na tela. 
+
+--------------------------------------------------------
+
+IMAGEM VIEWMODEL
+* A ViewModel é uma classe não visual, que expõe para a View uma lógica de apresentação
+* É testável, independentemente da View ou do Model
+* Não referencia a View, na verdade, não tem nenhum conhecimento sobre ela
+
+ViewModel: a responsabilidade da ViewModel, no contexto do MVVM, é disponibilizar para a View uma lógica de apresentação. A View Model não tem nenhum conhecimento específico sobre a view, ou sobre como ela é implementada. A ViewModel implementa propriedades e comandos para que a View possa preencher seus controles, e a notifica caso haja alteração de estado, através de eventos. A ViewModel é peça fundamental no MVVM porque é ela quem vai coordenar as iterações da View com o Model, já que um não tem conhecimento do outro.
+
+* O Modelo são classes que encapsulam a lógica de negócios e os dados
+* O Modelo não referencia diretamente a View ou ViewModel
+
+--------------------------------------------------------
+
+IMAGEM MODEL
+Model: no MVVM, o Model encapsula a lógica de negócios e os dados. O Model nada mais é do que o modelo de domínio de uma aplicação, ou seja, as classes de negócio que serão utilizadas em uma determinada aplicação. Ele também contém os papéis e a validação dos dados de acordo com o negócio, cuja aplicação em questão visa a atender.
+
+--------------------------------------------------------
+
+Vocês podem observar que o modelo possui uma clara separação de responsabilidades
+
+O MVVM permite a você ter uma visão da clara separação da Interface com o usuário (View), sua lógica de apresentação (ViewModel) e os seus Dados (Model). E, trabalhando dessa forma, temos separação de responsabilidades, desacoplamento e conseguimos evoluir e manter melhor as nossas aplicações.
+
+
+
+
+
+3. Apresentar o primeiro exemplo
+
+uma lista de tarefas
+
+
+HTML DOM (Document Object Model)
+With the HTML DOM, JavaScript can access and change all the elements of an HTML document.
+
+When a web page is loaded, the browser creates a Document Object Model of the page.
+
+The HTML DOM model is constructed as a tree of Objects:
+
+pic_htmltree.gif
+
+With the object model, JavaScript gets all the power it needs to create dynamic HTML:
+
+
+What is the HTML DOM?
+The HTML DOM is a standard object model and programming interface for HTML. It defines:
+
+The HTML elements as objects
+The properties of all HTML elements
+The methods to access all HTML elements
+The events for all HTML elements
+
+--------------------------------------------------------
+
+4. Comparação de Jquery com Knockout
+* Comparação em gerar uma lista dinâmica em Jquery
+* Comparação em exibir botões e contadores de listas
+
+
+Document Object Model
+
+--------------------------------------------------------
+
+IMAGEM CÓDIGO ASP
+comparação do código antigo ASP com o HTML e Declarative Bindings
+
+
+Links:
+
+http://knockoutjs.com/
+
+* Adicionar meu link do GitHub
+
+https://github.com/SteveSanderson/knockout/downloads
+https://github.com/jswanner/knockout-screencast
+http://jswanner.github.com/knockout-screencast/
