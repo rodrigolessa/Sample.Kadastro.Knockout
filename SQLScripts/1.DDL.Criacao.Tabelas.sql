@@ -9,10 +9,13 @@ DROP TABLE [kadastro].[dbo].[Ponto];
 GO
 DROP TABLE [kadastro].[dbo].[Usuario];
 GO
+DROP TABLE [kadastro].[dbo].[Tarefa];
+GO
 
 SELECT * FROM [dbo].[Usuario];
 SELECT * FROM [dbo].[Ponto];
 SELECT * FROM [dbo].[Intervalo];
+SELECT * FROM [dbo].[Tarefa];
 
 */
 
@@ -41,6 +44,14 @@ CREATE TABLE [dbo].[Intervalo](
 )
 GO
 
+CREATE TABLE [dbo].[Tarefa](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdUsuario] [int] NOT NULL,
+	[Descricao] [varchar](100) NULL,
+	[Executada] [bit] NULL
+)
+GO
+
 ALTER TABLE [dbo].[Usuario] ADD CONSTRAINT [PK_Usuario] PRIMARY KEY CLUSTERED ([Id] ASC)
 GO
 
@@ -57,4 +68,10 @@ ALTER TABLE [dbo].[Intervalo]  WITH NOCHECK ADD  CONSTRAINT [FK_Intervalo_Ponto]
 GO
 
 ALTER TABLE [dbo].[Intervalo] CHECK CONSTRAINT [FK_Intervalo_Ponto]
+GO
+
+ALTER TABLE [dbo].[Tarefa] ADD CONSTRAINT [PK_Tarefa] PRIMARY KEY CLUSTERED ([Id] ASC)
+GO
+
+ALTER TABLE [dbo].[Tarefa] ADD CONSTRAINT [FK_Tarefa_Usuario] FOREIGN KEY([IdUsuario]) REFERENCES [dbo].[Usuario] ([Id])
 GO
