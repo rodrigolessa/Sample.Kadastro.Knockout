@@ -1,7 +1,5 @@
-Knockout.JS
+Entendendo o Knockout.JS
 Um Framework JavaScript baseado no pattern MVVM
-
-Entendendo o Knockout
 
 1. Introdução:
 
@@ -10,56 +8,52 @@ O que é o KnockoutJS
 Knockout.js é uma biblioteca client-side em JavaScript.
 Knockout.js fornece ferramentas para tornar mais fácil criar uma interface rica, responsiva e organizada com JavaScript.
 
+2. Conceitual
+(Padrão usado para definir o Knockout)
 
+Knockout.js adota o Design Pattern Model-View-ViewModel (MVVM)
 
-2. Conceitual: (Padrão usado para definir o Knockout)
+Utilizando Eventos do DOM (click, submit, hover), Notificações e o formato JSON (JavaScript Object Notation) para comunicação entre as camadas
 
-Adota o Design Pattern Model-View-ViewModel (MVVM)
+JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. (Formato de intercâmbio de dados)
 
-imagem que representa o Model-View-ViewModel (MVVM) - 2.png
+Especialização do MVP (Model View Presenter), que também  é independente de plataforma.
 
--- podemos até dizer que ele é uma especialização do MVP (Model View Presenter), que também  é independente de plataforma.
+2.1 Responsabilidades e características
+
+O MVVM permite a você ter uma visão da clara separação da Interface com o usuário (View), sua lógica de apresentação (ViewModel) e os seus Dados (Model). E, trabalhando dessa forma, temos separação de responsabilidades, desacoplamento e conseguimos evoluir e manter melhor as nossas aplicações.
 
 --------------------------------------------------------
-
-IMAGEM VIEW
+2.2 VIEW
 a View, através do databinding, interage com a ViewModel notificando a ocorrência de eventos e o disparo de comandos. A ViewModel, por sua vez, responde a essa notificação realizando alguma ação no modelo, seja obtendo algum dado, atualizando ou inserindo informações no modelo.
-
-Responsabilidades e características
 
 * View: a responsabilidade da View é definir a aparência ou a estrutura que o usuário vê na tela. 
 
 --------------------------------------------------------
-
-IMAGEM VIEWMODEL
+2.3 VIEWMODEL
 * A ViewModel é uma classe não visual, que expõe para a View uma lógica de apresentação
 * É testável, independentemente da View ou do Model
 * Não referencia a View, na verdade, não tem nenhum conhecimento sobre ela
 
 ViewModel: a responsabilidade da ViewModel, no contexto do MVVM, é disponibilizar para a View uma lógica de apresentação. A View Model não tem nenhum conhecimento específico sobre a view, ou sobre como ela é implementada. A ViewModel implementa propriedades e comandos para que a View possa preencher seus controles, e a notifica caso haja alteração de estado, através de eventos. A ViewModel é peça fundamental no MVVM porque é ela quem vai coordenar as iterações da View com o Model, já que um não tem conhecimento do outro.
 
+--------------------------------------------------------
+2.4 MODEL
+Model: no MVVM, o Model encapsula a lógica de negócios e os dados. O Model nada mais é do que o modelo de domínio de uma aplicação, ou seja, as classes de negócio que serão utilizadas em uma determinada aplicação. Ele também contém os papéis e a validação dos dados de acordo com o negócio, cuja aplicação em questão visa a atender.
+
 * O Modelo são classes que encapsulam a lógica de negócios e os dados
 * O Modelo não referencia diretamente a View ou ViewModel
 
 --------------------------------------------------------
 
-IMAGEM MODEL
-Model: no MVVM, o Model encapsula a lógica de negócios e os dados. O Model nada mais é do que o modelo de domínio de uma aplicação, ou seja, as classes de negócio que serão utilizadas em uma determinada aplicação. Ele também contém os papéis e a validação dos dados de acordo com o negócio, cuja aplicação em questão visa a atender.
-
---------------------------------------------------------
-
-Vocês podem observar que o modelo possui uma clara separação de responsabilidades
-
-O MVVM permite a você ter uma visão da clara separação da Interface com o usuário (View), sua lógica de apresentação (ViewModel) e os seus Dados (Model). E, trabalhando dessa forma, temos separação de responsabilidades, desacoplamento e conseguimos evoluir e manter melhor as nossas aplicações.
-
-
-
-
-
 3. Apresentar o primeiro exemplo
 
 uma lista de tarefas
 
+4. IMAGEM CÓDIGO ASP
+comparação do código antigo ASP com o HTML e Declarative Bindings
+
+5. Document Object Model
 
 HTML DOM (Document Object Model)
 With the HTML DOM, JavaScript can access and change all the elements of an HTML document.
@@ -83,18 +77,11 @@ The events for all HTML elements
 
 --------------------------------------------------------
 
-4. Comparação de Jquery com Knockout
+?. Comparação de Jquery com Knockout
 * Comparação em gerar uma lista dinâmica em Jquery
 * Comparação em exibir botões e contadores de listas
 
-
-Document Object Model
-
 --------------------------------------------------------
-
-IMAGEM CÓDIGO ASP
-comparação do código antigo ASP com o HTML e Declarative Bindings
-
 
 Links:
 
