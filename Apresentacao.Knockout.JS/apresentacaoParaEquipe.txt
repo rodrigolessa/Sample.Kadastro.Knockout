@@ -45,13 +45,39 @@ Model: no MVVM, o Model encapsula a lógica de negócios e os dados. O Model nada 
 * O Modelo não referencia diretamente a View ou ViewModel
 
 --------------------------------------------------------
+2.5 Mais conceitos chaves do KOjs (Key concepts)
+
+Declarative Bindings
+Easily associate DOM elements with model data using a concise, readable syntax
+
+Automatic UI Refresh
+When your data model's state changes, your UI updates automatically
+
+Dependency Tracking
+Implicitly set up chains of relationships between model data, to transform and combine it
+
+Templating
+Quickly generate sophisticated, nested UIs as a function of your model data
+
+--------------------------------------------------------
 
 3. Apresentar o primeiro exemplo
 
 uma lista de tarefas
 
+- Obter dados do Servidor
+- Definir uma interface com o usuário
+- Criar métodos para apresentação e manter os dados  (DOM)
+- Criar métodos para manipular os dados (como reordenação da lista) 
+- Criar métodos para validar os dados do usuário
+- Criar métodos para persistir os dados
+
+--------------------------------------------------------
+
 4. IMAGEM CÓDIGO ASP
 comparação do código antigo ASP com o HTML e Declarative Bindings
+
+--------------------------------------------------------
 
 5. Document Object Model
 
