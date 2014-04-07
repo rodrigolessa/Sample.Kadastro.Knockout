@@ -24,7 +24,7 @@ function ListarTarefasViewModel()
     // Load initial state from server, convert it to Task instances, then populate self.tarefas
     //$.getJSON("http://localhost/kadastroNet/KadastroServiceHost.svc/Listartarefas/", function(allData) {
     $.getJSON("/KadastroServiceHost.svc/Listartarefas/", function(allData) {
-        var mappedtarefas = $.map(allData.ListartarefasResult, function(item) { return new Usuario(item) });
+        var mappedtarefas = $.map(allData.ListartarefasResult, function(item) { return new Tarefa(item) });
         self.tarefas(mappedtarefas);
     });
 }
