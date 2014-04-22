@@ -20,3 +20,5 @@ SELECT * FROM USUARIO
 --UPDATE Usuario SET Login = 'rodrigolessa', Email = 'rodrigolessa@teste.com.br' WHERE Id = 1006
 --UPDATE Usuario SET Login = 'rodrigolsr', Email = 'rodrigolsr@gmail.com' WHERE Id = 1007
 --UPDATE Usuario SET Login = 'rlessa', Email = 'rlessa@teste.com.br' WHERE Id = 1008
+
+select * from Tarefa t INNER JOIN Usuario u ON (t.IdUsuario = u.Id)
