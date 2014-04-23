@@ -15,3 +15,5 @@
 	<script src="js/libs/bootstrap.min.js"></script>
 
 	<script src="js/comuns.js"></script>
+
+	<script src="js/extensions.js"></script>

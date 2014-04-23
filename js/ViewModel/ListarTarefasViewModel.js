@@ -1,31 +1,53 @@
 function Tarefa(data)
 {
-    this.Id = data.Id
-    this.IdUsuario = data.IdUsuario
-	this.Descricao = data.Descricao;
-	this.Executada = data.Executada;
+    this.Id = data.Id;
+    this.Descricao = data.Descricao;
+    this.IdUsuario = data.IdUsuario;
+    this.Executada = data.Executada;
 }
 
 function ListarTarefasViewModel()
 {
 	var self = this;
 
+    // TODO: Obter Id e Login do Usuário logado
+    self.LoginUsuario = "TesteUsuarioTarefa";
     self.tarefas = ko.observableArray([]);
+    // TODO: Excluir Teste
+    //self.tarefas = [ { Id:1, IdUsuario:1, Descricao:"Teste", Executada:false }, { Id:2, IdUsuario:1, Descricao:"Teste 2", Executada:true } ]
+    self.descricaoNovaTarefa = ko.observable();
+    //self.incompleteTasks = ko.computed();
 
     // Operations
-    self.adicionaTarefa = function(tarefa) {
-		self.tarefas.push(tarefa);
+    self.adicionarTarefa = function() {
+		self.tarefas.push(new Tarefa({ Descricao: self.descricaoNovaTarefa() }));
+        self.descricaoNovaTarefa("");
     }
 
-    self.removeTarefa = function(tarefa) {
+    self.removerTarefa = function(tarefa) {
 		self.tarefas.remove(tarefa);
     }
 
-    // Load initial state from server, convert it to Task instances, then populate self.tarefas
-    //$.getJSON("http://localhost/kadastroNet/KadastroServiceHost.svc/Listartarefas/", function(allData) {
-    $.getJSON("/KadastroServiceHost.svc/Listartarefas/", function(allData) {
-        var mappedtarefas = $.map(allData.ListartarefasResult, function(item) { return new Tarefa(item) });
-        self.tarefas(mappedtarefas);
+    // Ativando bloqueio de tela
+    doBlockUI();
+
+    // Carga inicial dos dados do servidor, converte para uma instância de Tarefa, e popula a lista self.tarefas.
+    // status - contains a string containing request status ("success", "notmodified", "error", "timeout", or "parsererror").
+    $.getJSON("http://localhost/kadastroNet/KadastroServiceHost.svc/ListarTarefas/"+self.LoginUsuario+"/", function(allData, strStatus, xhr) {
+
+        if (strStatus == "success") {
+
+            var mappedTarefas = $.map(allData.ListarTarefasResult, function(item) { return new Tarefa(item) });
+            self.tarefas(mappedTarefas);
+
+            $.unblockUI();
+
+        } else {
+
+            $.unblockUI();
+            alert(strStatus);
+        }
+
     });
 }
 

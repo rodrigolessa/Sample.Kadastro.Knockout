@@ -65,7 +65,7 @@
 
 					<br />
 
-					<button data-bind="click: salvar, enable: Login.length > 3, text: txtBotaoSalvar" class="btn btn-primary btn-lg btn-block"></button>
+					<button data-bind="click: salvar, disable: Login.length < 3, text: txtBotaoSalvar" class="btn btn-primary btn-lg btn-block"></button>
 
 				</fieldset>
 
