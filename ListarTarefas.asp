@@ -9,8 +9,8 @@
 				<form class="form-inline" role="form" accept-charset="UTF-8" id="mainForm" method="post" data-bind="submit: adicionarTarefa">
 
 					<div class="form-group">
-						<label for="descricao">tarefa:</label>
-						<input id="descricao" data-bind="value: descricaoNovaTarefa" type="text" placeholder="o que precisa ser feito?" class="form-control">
+						<label class="sr-only" for="txtDescricao">tarefa</label>
+						<input type="text" id="txtDescricao" data-bind="value: descricaoNovaTarefa" placeholder="o que precisa ser feito?" class="form-control">
 					</div>
 					<button type="submit" class="btn btn-default">salvar</button>
 
