@@ -18,6 +18,7 @@
 
 	<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
 
+  <link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.4.custom.min.css" />
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->

@@ -1,5 +1,5 @@
 	<script src="js/libs/jquery-1.10.2.min.js"></script>
-	<script src="js/libs/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="js/libs/jquery-ui-1.10.4.custom.min.js"></script>
 	<script src="js/libs/jquery.unobtrusive-ajax.min.js"></script>
 	<script src="js/libs/jquery.validate.min.js"></script>
 	<script src="js/libs/jquery.validate.unobtrusive.min.js"></script>

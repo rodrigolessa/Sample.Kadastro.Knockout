@@ -48,5 +48,5 @@ function doBlockUI() {
     });
 
     // Desativando bloqueio por tempo (segurança se algum método não tiver retorno)
-    setTimeout($.unblockUI, 9000);
+    setTimeout($.unblockUI, 15000);
 }
