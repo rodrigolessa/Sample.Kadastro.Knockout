@@ -6,34 +6,57 @@ function Tarefa(data) {
 }
 
 function ListarTarefasViewModel() {
+
+    // Variáveis
+    /////////////////////////////////////////
 	var self = this;
 
     // TODO: Obter Id e Login do Usuário logado
-    self.LoginUsuario = "TesteUsuarioTarefa";
+    self.loginUsuario = "TesteUsuarioTarefa";
+    self.codigoUsuario = 2008;
     self.tarefas = ko.observableArray([]);
-    // TODO: Excluir Teste
     //self.tarefas = [ { Id:1, IdUsuario:1, Descricao:"Teste", Executada:false }, { Id:2, IdUsuario:1, Descricao:"Teste 2", Executada:true } ]
     self.descricaoNovaTarefa = ko.observable();
     self.tarefasIncompletas = ko.computed(function(){
         return ko.utils.arrayFilter(self.tarefas(), function(tarefa) { return !tarefa.Executada && !tarefa._destroy });
     });
 
-    // Operations
+    // Operações
+    /////////////////////////////////////////
+
     self.adicionarTarefa = function() {
-		self.tarefas.push(new Tarefa({ Descricao: self.descricaoNovaTarefa() }));
+
+        doBlockUI();
+
+        var novaTarefa = new Tarefa({ Descricao: self.descricaoNovaTarefa(), IdUsuario: self.codigoUsuario, Executada: false });
+
+		self.tarefas.push(novaTarefa);
         self.descricaoNovaTarefa("");
+
+        doAjx("http://localhost/kadastroNet/KadastroServiceHost.svc/SalvarTarefa/", { tarefa: novaTarefa }, function(resultado){
+            $.unblockUI();
+            if (resultado.SalvarTarefaResult != null)
+                alert(resultado.SalvarTarefaResult.Message);
+        });
+
     };
 
     self.removerTarefa = function(tarefa) {
+
+        doBlockUI();
+
 		self.tarefas.destroy(tarefa);
+
+        $.unblockUI();
     };
 
     // Ativando bloqueio de tela
+    /////////////////////////////////////////
     doBlockUI();
 
     // Carga inicial dos dados do servidor, converte para uma instância de Tarefa, e popula a lista self.tarefas.
     // status - contains a string containing request status ("success", "notmodified", "error", "timeout", or "parsererror").
-    $.getJSON("http://localhost/kadastroNet/KadastroServiceHost.svc/ListarTarefas/"+self.LoginUsuario+"/", function(allData, strStatus, xhr) {
+    $.getJSON("http://localhost/kadastroNet/KadastroServiceHost.svc/ListarTarefas/"+self.loginUsuario+"/", function(allData, strStatus, xhr) {
 
         if (strStatus == "success") {
 
