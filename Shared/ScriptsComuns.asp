@@ -10,7 +10,7 @@
 
 	<script src="js/libs/json2.js"></script>
 	
-	<script src="js/libs/knockout-2.2.1.js"></script>
+	<script src="js/libs/knockout-3.1.0.js"></script>
 
 	<script src="js/libs/bootstrap.min.js"></script>
 
