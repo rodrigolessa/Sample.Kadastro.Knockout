@@ -37,6 +37,8 @@
 				</tbody>
 				</table>
 
+				Você possui <b data-bind="text: tarefasIncompletas().length">&nbsp;</b> tarefa(s) incompletas!
+
 			</div>
 
 		</div>
@@ -47,20 +49,28 @@
 
 	<!-- NÍVEL / SENIOR //-->
 	<div class="row container-nivel">
+
 		<div class="col-lg-12">
+
 			<div class="container-narrow text-right">
 				<img src="img/my.icon2.png" width="82" height="82" class="my-icon">
 			</div>
+
 		</div>
+
 	</div>
 	<!--/row-->
 
 	<div class="row container-divisor-base">
+
 		<div class="col-lg-12">
+
 			<div class="container-narrow text-right">
-				<h4>...</h4>
+				<h4>Rodrigo Lessa</h4>
 			</div>
+
 		</div>
+
 	</div>
 	<!--/row-->
 
@@ -73,11 +83,9 @@
 			</div>
 
 		</div>
-		<!--/span-->
 
 	</div>
 	<!--/row-->
-
 
 	<!--#include file="Shared/ScriptsComuns.asp"-->
 

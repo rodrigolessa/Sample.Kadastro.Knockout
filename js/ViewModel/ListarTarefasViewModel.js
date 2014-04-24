@@ -1,13 +1,11 @@
-function Tarefa(data)
-{
+function Tarefa(data) {
     this.Id = data.Id;
     this.Descricao = data.Descricao;
     this.IdUsuario = data.IdUsuario;
     this.Executada = data.Executada;
 }
 
-function ListarTarefasViewModel()
-{
+function ListarTarefasViewModel() {
 	var self = this;
 
     // TODO: Obter Id e Login do Usuário logado
@@ -16,17 +14,19 @@ function ListarTarefasViewModel()
     // TODO: Excluir Teste
     //self.tarefas = [ { Id:1, IdUsuario:1, Descricao:"Teste", Executada:false }, { Id:2, IdUsuario:1, Descricao:"Teste 2", Executada:true } ]
     self.descricaoNovaTarefa = ko.observable();
-    //self.incompleteTasks = ko.computed();
+    self.tarefasIncompletas = ko.computed(function(){
+        return ko.utils.arrayFilter(self.tarefas(), function(tarefa) { return !tarefa.Executada && !tarefa._destroy });
+    });
 
     // Operations
     self.adicionarTarefa = function() {
 		self.tarefas.push(new Tarefa({ Descricao: self.descricaoNovaTarefa() }));
         self.descricaoNovaTarefa("");
-    }
+    };
 
     self.removerTarefa = function(tarefa) {
-		self.tarefas.remove(tarefa);
-    }
+		self.tarefas.destroy(tarefa);
+    };
 
     // Ativando bloqueio de tela
     doBlockUI();
