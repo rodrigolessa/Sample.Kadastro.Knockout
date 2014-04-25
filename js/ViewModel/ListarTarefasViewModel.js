@@ -34,11 +34,11 @@ function ListarTarefasViewModel() {
         self.descricaoNovaTarefa("");
 
         doAjx("http://localhost/kadastroNet/KadastroServiceHost.svc/SalvarTarefa/", { tarefa: novaTarefa }, function(resultado){
-            $.unblockUI();
             if (resultado.SalvarTarefaResult != null)
                 alert(resultado.SalvarTarefaResult.Message);
         });
 
+        $.unblockUI();
     };
 
     self.removerTarefa = function(tarefa) {
@@ -46,6 +46,18 @@ function ListarTarefasViewModel() {
         doBlockUI();
 
 		self.tarefas.destroy(tarefa);
+
+        if (tarefa.Id != null){
+            $.ajax("http://localhost/kadastroNet/KadastroServiceHost.svc/ExcluirTarefa/", {
+                data: ko.toJSON({ id: tarefa.Id }),
+                type: "delete", 
+                contentType: "application/json",
+                success: function(result) { 
+                    if (result.ExcluirTarefaResult != null)
+                        alert(result.ExcluirTarefaResult.Message);
+                 }
+             });
+        }
 
         $.unblockUI();
     };
