@@ -1,10 +1,3 @@
-function Tarefa(data) {
-    this.Id = data.Id;
-    this.Descricao = data.Descricao;
-    this.IdUsuario = data.IdUsuario;
-    this.Executada = data.Executada;
-}
-
 function ListarTarefasViewModel() {
 
     // Variáveis
@@ -13,7 +6,7 @@ function ListarTarefasViewModel() {
 
     // TODO: Obter Id e Login do Usuário logado
     self.loginUsuario = "TesteUsuarioTarefa";
-    self.codigoUsuario = 2008;
+    self.codigoUsuario = 1;
     self.tarefas = ko.observableArray([]);
     //self.tarefas = [ { Id:1, IdUsuario:1, Descricao:"Teste", Executada:false }, { Id:2, IdUsuario:1, Descricao:"Teste 2", Executada:true } ]
     self.descricaoNovaTarefa = ko.observable();
@@ -28,15 +21,17 @@ function ListarTarefasViewModel() {
 
         doBlockUI();
 
-        var novaTarefa = new Tarefa({ Descricao: self.descricaoNovaTarefa(), IdUsuario: self.codigoUsuario, Executada: false });
+        if (self.descricaoNovaTarefa().length > 1){
+            var novaTarefa = new Tarefa({ Descricao: self.descricaoNovaTarefa(), IdUsuario: self.codigoUsuario, Executada: false });
 
-		self.tarefas.push(novaTarefa);
-        self.descricaoNovaTarefa("");
+            self.tarefas.push(novaTarefa);
+            self.descricaoNovaTarefa("");
 
-        doAjx("http://localhost/kadastroNet/KadastroServiceHost.svc/SalvarTarefa/", { tarefa: novaTarefa }, function(resultado){
-            if (resultado.SalvarTarefaResult != null)
-                alert(resultado.SalvarTarefaResult.Message);
-        });
+            doAjx("KadastroServiceHost.svc/SalvarTarefa/", { tarefa: novaTarefa }, function(resultado){
+                if (resultado.SalvarTarefaResult != null)
+                    alert(resultado.SalvarTarefaResult.Message);
+            });
+        }
 
         $.unblockUI();
     };
@@ -48,7 +43,7 @@ function ListarTarefasViewModel() {
 		self.tarefas.destroy(tarefa);
 
         if (tarefa.Id != null){
-            $.ajax("http://localhost/kadastroNet/KadastroServiceHost.svc/ExcluirTarefa/", {
+            $.ajax("KadastroServiceHost.svc/ExcluirTarefa/", {
                 data: ko.toJSON({ id: tarefa.Id }),
                 type: "delete", 
                 contentType: "application/json",
@@ -68,21 +63,15 @@ function ListarTarefasViewModel() {
 
     // Carga inicial dos dados do servidor, converte para uma instância de Tarefa, e popula a lista self.tarefas.
     // status - contains a string containing request status ("success", "notmodified", "error", "timeout", or "parsererror").
-    $.getJSON("http://localhost/kadastroNet/KadastroServiceHost.svc/ListarTarefas/"+self.loginUsuario+"/", function(allData, strStatus, xhr) {
-
+    $.getJSON("KadastroServiceHost.svc/ListarTarefas/"+self.loginUsuario+"/", function(allData, strStatus, xhr) {
         if (strStatus == "success") {
-
             var mappedTarefas = $.map(allData.ListarTarefasResult, function(item) { return new Tarefa(item) });
             self.tarefas(mappedTarefas);
-
             $.unblockUI();
-
         } else {
-
             $.unblockUI();
             alert(strStatus);
         }
-
     });
 }
 

@@ -18,3 +18,20 @@ $(document).ready(function(){
   //$('.ip_address').mask('099.099.099.099');
 
 });
+
+// Classe de "usuário" correspondente ao UsuarioDataContract
+function Usuario(data){
+  this.Id = data.Id
+  this.Login = data.Login;
+  this.Email = data.Email;
+  this.Status = data.Status;
+  this.DescricaoDoStatus = data.DescricaoDoStatus;
+}
+
+// Classe de "tarefa de usuário" correspondente ao TarefaDataContract
+function Tarefa(data) {
+    this.Id = data.Id;
+    this.Descricao = data.Descricao;
+    this.IdUsuario = data.IdUsuario;
+    this.Executada = data.Executada;
+}

@@ -3,15 +3,8 @@ function Perfil(data) {
     this.Descricao = ko.observable(data.Descricao);
 }
 
-function Usuario(data) {
-    this.Login = ko.observable(data.Id);
-    this.Senha = ko.observable(data.Descricao);
-    this.Nome = ko.observable(data.Descricao);
-    this.Email = ko.observable(data.Descricao);
-}
-
 // This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
-function ManterUsuarioViewModel() 
+function ManterUsuarioViewModel()
 {
 	var self = this;
 
@@ -31,13 +24,6 @@ function ManterUsuarioViewModel()
         var mappedPerfis = $.map(allData.ListarPerfisDeAcessoResult, function(item) { return new Perfil(item) });
         self.Perfis(mappedPerfis);
     }); //getJSON
-
-    /*
-    $.getJSON('http://localhost/kadastronet/KadastroServiceHost.svc/ListarPerfisDeAcesso/', function (data) {
-        //var tmp = JSON.stringify(data.ListarPerfisDeAcessoResult);
-        //self.Perfis = ko.mapping.fromJSON(tmp);
-    }); //getJSON
-    */
 
     self.salvar = function() {
 

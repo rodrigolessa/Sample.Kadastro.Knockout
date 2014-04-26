@@ -1,12 +1,3 @@
-function Usuario(data) 
-{
-    this.Id = data.Id
-	this.Login = data.Login;
-	this.Email = data.Email;
-	this.Status = data.Status;
-	this.DescricaoDoStatus = data.DescricaoDoStatus;
-}
-
 function ListarUsuarioViewModel()
 {
 	var self = this;
