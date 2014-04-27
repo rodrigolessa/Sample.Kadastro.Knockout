@@ -1,7 +1,5 @@
 	<div class="footer">
-		<!--
-		<p>&copy; Company 2013</p>
-		//-->
+		<p>&copy; Company 2014</p>
 	</div>
 
 </body>

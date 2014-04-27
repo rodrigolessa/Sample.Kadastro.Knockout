@@ -29,9 +29,3 @@ function Usuario(data){
 }
 
 // Classe de "tarefa de usuário" correspondente ao TarefaDataContract
-function Tarefa(data) {
-    this.Id = data.Id;
-    this.Descricao = data.Descricao;
-    this.IdUsuario = data.IdUsuario;
-    this.Executada = data.Executada;
-}

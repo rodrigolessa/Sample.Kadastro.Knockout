@@ -1,10 +1,9 @@
 ﻿function doAjx(action, data, refresh) {
-    $.ajax(action, {
-        data: ko.toJSON(data),
-        type: "post", 
-        contentType: "application/json",
-        success: function(result) { refresh(result) }
-        /*
+    $.ajax(action, { 
+          data: ko.toJSON(data)
+        , type: "post"
+        , contentType: "application/json"
+        , success: function(result) { refresh(result) }
         , error: function(jqXHR, exception) {
             if (jqXHR.status === 0) {
                 alert('Não conectado.\n Verifique sua conexão com a internet.');
@@ -22,7 +21,6 @@
                 alert('Erro.\n' + jqXHR.responseText);
             }
         }
-        */
     });
 }
 

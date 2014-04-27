@@ -31,8 +31,8 @@
 					<tr>
 						<td><input type="checkbox" data-bind="checked: Executada" /></td>
 						<td data-bind="text: Id"></td>
-						<td data-bind="text: Descricao" style="text-align:left;"></td>
-						<td><a href="#" data-bind="click: $root.removerTarefa, visible: !Executada">excluir</a></td>
+						<td data-bind="text: Descricao" class="text-left"></td>
+						<td><a href="#" data-bind="click: $root.removerTarefa, visible: !Executada()">excluir</a></td>
 					</tr>
 				</tbody>
 				</table>
@@ -65,8 +65,8 @@
 
 		<div class="col-lg-12">
 
-			<div class="container-narrow text-right">
-				<h4>Rodrigo Lessa</h4>
+			<div class="container-narrow text-left">
+				<h4 data-bind="text: loginUsuario">Rodrigo Lessa</h4>
 			</div>
 
 		</div>

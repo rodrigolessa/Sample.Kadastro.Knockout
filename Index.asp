@@ -86,7 +86,7 @@
 
 		<div class="col-lg-12">
 
-			<div class="container-narrow text-right">
+			<div class="container-narrow text-left">
 				<h4>Rodrigo Lessa</h4>
 			</div>
 

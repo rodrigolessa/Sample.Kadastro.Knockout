@@ -1,3 +1,11 @@
+// Classe de "tarefa de usuário" correspondente ao TarefaDataContract
+function Tarefa(data) {
+    this.Id = data.Id;
+    this.Descricao = data.Descricao;
+    this.IdUsuario = data.IdUsuario;
+    this.Executada = ko.observable(data.Executada);
+}
+
 function ListarTarefasViewModel() {
 
     // Variáveis
@@ -11,7 +19,7 @@ function ListarTarefasViewModel() {
     //self.tarefas = [ { Id:1, IdUsuario:1, Descricao:"Teste", Executada:false }, { Id:2, IdUsuario:1, Descricao:"Teste 2", Executada:true } ]
     self.descricaoNovaTarefa = ko.observable();
     self.tarefasIncompletas = ko.computed(function(){
-        return ko.utils.arrayFilter(self.tarefas(), function(tarefa) { return !tarefa.Executada && !tarefa._destroy });
+        return ko.utils.arrayFilter(self.tarefas(), function(tarefa) { return !tarefa.Executada() && !tarefa._destroy });
     });
 
     // Operações
