@@ -8,7 +8,7 @@ function Tarefa(data) {
 
 function ListarTarefasViewModel() {
 
-    // Variáveis
+    // Propriedades
     /////////////////////////////////////////
 	var self = this;
 
