@@ -14,7 +14,7 @@ function ListarTarefasViewModel() {
 
     // TODO: Obter Id e Login do Usuário logado
     self.loginUsuario = "TesteUsuarioTarefa";
-    self.codigoUsuario = 1;
+    self.codigoUsuario = 2008;
     self.tarefas = ko.observableArray([]);
     //self.tarefas = [ { Id:1, IdUsuario:1, Descricao:"Teste", Executada:false }, { Id:2, IdUsuario:1, Descricao:"Teste 2", Executada:true } ]
     self.descricaoNovaTarefa = ko.observable();
