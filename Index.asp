@@ -1,12 +1,12 @@
 	<!--#include file="Shared/Cabecalho.asp"-->
 
-	<div id="topo" class="row container-topo">
+	<div class="container-fluid content-main">
 
-		<div class="col-lg-12">
+		<div class="row">
 
-			<form role="form" accept-charset="UTF-8" id="mainForm" method="post" class="container-narrow">
+			<div class="col-lg-12">
 
-				<fieldset>
+				<div class="container-narrow">
 
 					<h2 data-bind="text: lblDia">dia</h2>
 
@@ -24,92 +24,96 @@
 
 					<button data-bind="click: addPonto, enable: pontosMes().length < 2, text: txtBotaoSalvar" class="btn btn-primary btn-lg btn-block"></button>
 
-				</fieldset>
+					<hr>
 
-				<hr>
+					<div class="table-responsive">
+						<table class="table table-striped">
+						<caption data-bind="text: txtCaptionMes"></caption>
+						<thead>
+							<tr>
+								<th data-bind="text: cabecalhoData"></th>
+								<th data-bind="text: cabecalhoIntervalos"></th>
+								<th data-bind="text: cabecalhoTotalDia"></th>
+								<th data-bind="text: cabecalhoHorasNegativasDia"></th>
+								<th data-bind="text: cabecalhoHorasPositivasDia"></th>
+							</tr>
+						</thead>
+						<tbody data-bind="foreach: pontosMes">
+							<tr>
+								<td data-bind="text: dataFormatada"/></td>
+								<td data-bind="foreach: intervalosDia">
+									<span data-bind="text: entrada"></span> - <span data-bind="text: saida"></span>
+								</td>
+								<td data-bind="text: totalHorasDia"></td>
+								<td data-bind="text: horasNegativasDia"></td>
+								<td data-bind="text: horasPositivasDia"></td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
 
-				<div class="table-responsive">
-					<table class="table table-striped">
-					<caption data-bind="text: txtCaptionMes"></caption>
-					<thead>
-						<tr>
-							<th data-bind="text: cabecalhoData"></th>
-							<th data-bind="text: cabecalhoIntervalos"></th>
-							<th data-bind="text: cabecalhoTotalDia"></th>
-							<th data-bind="text: cabecalhoHorasNegativasDia"></th>
-							<th data-bind="text: cabecalhoHorasPositivasDia"></th>
-						</tr>
-					</thead>
-					<tbody data-bind="foreach: pontosMes">
-						<tr>
-							<td data-bind="text: dataFormatada"/></td>
-							<td data-bind="foreach: intervalosDia">
-								<span data-bind="text: entrada"></span> - <span data-bind="text: saida"></span>
-							</td>
-							<td data-bind="text: totalHorasDia"></td>
-							<td data-bind="text: horasNegativasDia"></td>
-							<td data-bind="text: horasPositivasDia"></td>
-						</tr>
-					</tbody>
-					</table>
+					<h4 data-bind="visible: totalMes > 0">
+						Total de horas do mês: <span data-bind="text: totalMes"></span>
+					</h4>
+
 				</div>
 
-				<h4 data-bind="visible: totalMes > 0">
-					Total de horas do mês: <span data-bind="text: totalMes"></span>
-				</h4>
-
-			</form>
-
-		</div>
-		<!--/span-->
-
-	</div>
-	<!--/row-->
-
-
-	<!-- NÍVEL / SENIOR //-->
-	<div class="row container-nivel">
-
-		<div class="col-lg-12">
-
-			<div class="container-narrow text-right">
-				<img src="img/my.icon2.png" width="82" height="82" class="my-icon">
 			</div>
+			<!--/column-->
 
 		</div>
-		<!--/span-->
+		<!--/row-->
 
 	</div>
-	<!--/row-->
+	<!--/container-->
 
-	<div class="row container-divisor-base">
+	<div class="container-fluid">
 
-		<div class="col-lg-12">
+		<!-- NÍVEL / SENIOR //-->
+		<div class="row container-nivel">
 
-			<div class="container-narrow text-left">
-				<h4>Rodrigo Lessa</h4>
+			<div class="col-lg-12">
+
+				<div class="container-narrow text-right">
+					<img src="img/my.icon2.png" width="82" height="82" class="my-icon">
+				</div>
+
 			</div>
+			<!--/span-->
 
 		</div>
-		<!--/span-->
+		<!--/row-->
 
-	</div>
-	<!--/row-->
+		<div class="row container-divisor-base">
 
-	<div class="row container-base">
+			<div class="col-lg-12">
 
-		<div class="col-lg-12">
+				<div class="container-narrow text-left">
+					<h4>Rodrigo Lessa</h4>
+				</div>
 
-			<div class="container-narrow">
-				...
 			</div>
+			<!--/span-->
 
 		</div>
-		<!--/span-->
+		<!--/row-->
 
-	</div>
+		<div class="row container-base">
+
+			<div class="col-lg-12">
+
+				<div class="container-narrow">
+					...
+				</div>
+
+			</div>
+			<!--/span-->
+
+		</div>
 	<!--/row-->
 
+	</div>
+	<!--/container-->
 
 	<!--#include file="Shared/ScriptsComuns.asp"-->
 

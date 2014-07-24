@@ -31,6 +31,21 @@
 
   <style type="text/css">
 
+    /* Extra small devices (phones, less than 768px) */
+    /* No media query since this is the default in Bootstrap */
+
+    @media (max-width: @screen-xs-max) { }
+
+    /* Small devices (tablets, 768px and up) */
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { }
+
+    /* Medium devices (desktops, 992px and up) */
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) { }
+
+    /* Large devices (large desktops, 1200px and up) */
+    @media (min-width: @screen-lg-min) { }
+
+
     table th
     {
       text-align: center;
@@ -45,7 +60,7 @@
       color: #ddd;
     }
 
-    .container-topo
+    .content-main
     {
       padding-top: 80px;
       background-color: #F0FAFF;
@@ -57,12 +72,7 @@
       max-width: 700px;
     }
 
-    .container-narrow > hr 
-    {
-      margin: 30px 0;
-    }
-
-    .container-narrow h2
+    .container-narrow > h2
     {
       font-weight: bold;
     }
@@ -112,7 +122,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">início</a></li>
+            <li class="active"><a href="Index.asp">início</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">usuários <b class="caret"></b></a>
               <ul class="dropdown-menu">

@@ -1,6 +1,6 @@
 	<!--#include file="Shared/Cabecalho.asp"-->
 
-	<div id="topo" class="row container-topo">
+	<div class="container-fluid content-main">
 
 		<div class="col-lg-12">
 
