@@ -10,4 +10,4 @@ Algumas bibliotecas e plugins utilizados:
 * jQuery - BlockUI (http://malsup.github.io/jquery.blockUI.js)
 * knockoutJS 3.1.0 ()
 
-* Bootstrap 3.1.1 (Framework CSS/JavaScript, http://getbootstrap.com/)
+* Bootstrap 3.2.0 (Framework CSS/JavaScript, http://getbootstrap.com/)
