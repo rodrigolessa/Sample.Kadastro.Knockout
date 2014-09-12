@@ -8,6 +8,6 @@ Algumas bibliotecas e plugins utilizados:
 * jQueryUI 1.10.4
 * jQuery - Mask Plugin (https://github.com/igorescobar/jQuery-Mask-Plugin)
 * jQuery - BlockUI (http://malsup.github.io/jquery.blockUI.js)
-* knockoutJS 3.1.0 ()
+* knockoutJS 3.1.0 (Framework MVVM)
 
 * Bootstrap 3.2.0 (Framework CSS/JavaScript, http://getbootstrap.com/)
