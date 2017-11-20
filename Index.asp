@@ -18,8 +18,8 @@
 					</div>
 
 					<div class="form-group">
-						<label for="input2" class="labelDiscreto">Hora Intervalo SaÃ­da:</label>
-						<input  id="input2" type="text" class="form-control input-lg horaMinuto" placeholder="00:00" data-bind="value: txtSaÃ­da" maxlength="5"/>
+						<label for="input2" class="labelDiscreto">Hora Intervalo Saída:</label>
+						<input  id="input2" type="text" class="form-control input-lg horaMinuto" placeholder="00:00" data-bind="value: txtSaída" maxlength="5"/>
 					</div>
 
 					<button data-bind="click: addPonto, enable: pontosMes().length < 2, text: txtBotaoSalvar" class="btn btn-primary btn-lg btn-block"></button>
@@ -53,7 +53,7 @@
 					</div>
 
 					<h4 data-bind="visible: totalMes > 0">
-						Total de horas do mÃªs: <span data-bind="text: totalMes"></span>
+						Total de horas do mês: <span data-bind="text: totalMes"></span>
 					</h4>
 
 				</div>
@@ -69,7 +69,7 @@
 
 	<div class="container-fluid">
 
-		<!-- NÃVEL / SENIOR //-->
+		<!-- NÍVEL / SENIOR //-->
 		<div class="row container-nivel">
 
 			<div class="col-lg-12">

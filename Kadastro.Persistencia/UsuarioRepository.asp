@@ -1,7 +1,7 @@
-<%
-	'response.write("{ { nome: 'Rodrigo', email: 'rodrigolsr@gmail.com', descricaoTipo: 'Administrador', descricaoSituacao: 'Ativo' }, { nome: 'Lilia', email: 'liliavieira@gmail.com', descricaoTipo: 'Usuário', descricaoSituacao: 'Ativo' }, { nome: 'Natalia', email: 'natalialessa@gmail.com', descricaoTipo: 'Usuário', descricaoSituacao: 'Inativo' } }")
-%>
+<!--#include file="../Kadastro.Arquitetura/BancoDeDados.asp"-->
+<!--#include file="../Kadastro.Comuns/SQLUtil.asp"-->
+<!--#include file="../Kadastro.Comuns/ValidationUtil.asp"-->
 {
-	"Status": 1,
-	"nome": "Rodrigo"
+	"Id": 1,
+	"Nome": "Rodrigo Lessa"
 }

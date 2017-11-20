@@ -1,4 +1,5 @@
 <!--#include file="Funcoes/fnConverteDataSQL.asp"-->
+<!--#include file="Funcoes/fnExecuteScalar.asp"-->
 <%
 
 Function PrmSQL(prmValor, prmTipoSQL)
