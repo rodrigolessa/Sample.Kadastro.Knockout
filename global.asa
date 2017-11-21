@@ -2,6 +2,6 @@
 	Sub Application_OnStart
 		Application("nome_servidor_dados") = "(local)"
 		Application("usuario") = "sa"
-		Application("senha") = "q1w2e3"
+		Application("senha") = "Lcd12345"
 	End Sub
 </script>
